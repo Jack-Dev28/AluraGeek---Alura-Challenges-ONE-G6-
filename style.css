@@ -1,0 +1,393 @@
+.press-start-2p-regular {
+    font-family: "Press Start 2P", system-ui;
+    font-weight: 400;
+    font-style: normal;
+}
+
+
+
+body {
+    background-color: #ff0000; /*  background */
+    color: orange;
+    font-family: "Press Start 2P", system-ui;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    padding: 20px;
+}
+
+header {
+    background-color: #000000; /* Darker background for header */
+    padding: 20px;
+    text-align: center;
+    border-radius: 10px;
+    width: 100%;
+
+}
+
+.hearts {
+    font-size: 2em;
+}
+
+main {
+    display: flex;
+    grid-template-columns: 1fr 1fr; /* Divide the grid into two equal columns */
+    gap: 20px;
+    width: 100%;
+    max-width: 900px;
+    margin-top: 20px;
+}
+
+section {
+    grid-column: 1 / 2; /* Make the first section span the full width of the first column */
+    background-color: #ffffff; /* Light purple background for sections */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+h2 {
+    text-align: center;
+}
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.product {
+    display: flex;
+    flex-direction: column;
+}
+    
+.product .card-container-img {
+    flex-grow: 1; /* Occupies the remaining space */
+    align-content: center;
+}
+    
+.product .card-container-info {
+    align-self: flex-end baseline; /* Aligns to the bottom */
+}
+
+
+
+
+.product {
+    background-color: white;
+    padding: 10px;
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+    min-width: 192px;
+}
+
+.product img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+.product .price {
+    font-weight: bold;
+}
+
+.remove-product {
+    background-color: #ff8800;
+    color: white;
+    padding: 8px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+
+
+
+.add-to-cart:hover {
+    background-color: #970000;
+}
+
+.add-product {
+    grid-column: 2 / 3; /* Make the second section span the full width of the second column */
+    min-width: 325px;
+    background: transparent; /* corregir  */
+    box-shadow: none;
+    
+    
+}
+
+
+.add-product form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+/*estse input queda pendiente de modificar*/
+.add-product input {
+    padding: 8px;
+    border: 4px solid #ff8800;
+    border-radius: 50px;
+}
+
+
+input[type="text"]::placeholder,
+input[type="number"]::placeholder,
+input[type="file"]::placeholder {
+  color: #ff8800; /* change the color to your desired one */
+}
+
+input[type="text"]::-webkit-input-placeholder,
+input[type="number"]::-webkit-input-placeholder,
+input[type="file"]::-webkit-input-placeholder {
+  color: #ff8800; 
+}
+
+input[type="text"]::-moz-placeholder,
+input[type="number"]::-moz-placeholder,
+input[type="file"]::-moz-placeholder {
+  color: #ff8800; 
+}
+
+input[type="text"]::-ms-input-placeholder,
+input[type="number"]::-ms-input-placeholder,
+input[type="file"]::-ms-input-placeholder {
+  color: #ff8800; 
+}
+
+
+
+#productImage {
+    opacity: 0;
+    position: absolute ;
+    z-index: -1;
+}
+
+#productImage + label {
+    cursor: pointer;
+    display: inline-block;
+    padding: 5px 10px;
+    border: 4px solid #ff8800;
+    border-radius: 50px;
+    font-size: 13px;
+    font-family: sans-serif;
+    font-feature-settings: normal;
+    font-kerning: auto;
+    font-optical-sizing: auto;
+
+}
+
+#productImage + label:hover {
+    background-color: #f0f0f0;
+}
+
+
+
+
+
+
+.add-product button {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.add-product button {
+    background-color: #ff8800;
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.add-product button:hover {
+    background-color: #FF6723;
+}
+
+
+
+/**/
+
+
+footer {
+    background-color: #000000;
+    padding: 10px;
+    text-align: center;
+    margin-top: 20px;
+    border-radius: 10px;
+    width: 100%;
+}
+
+footer p {
+    margin: 5px 0;
+}
+
+
+/* modo responsive */
+
+/* Add media queries for responsive design */
+
+
+@media (max-width: 1330px) {
+    main {
+    grid-column: 1 / 2;
+    display: flex;
+    flex-direction: column;
+    max-width: 900px;
+    align-items: center; /* Centra horizontalmente los elementos */
+    }
+    section:nth-child(1) {
+        order: 2; /* La primera sección ahora será la segunda en el orden visual */
+    }
+    section:nth-child(2) {
+        order: 1; /* La segunda sección ahora será la primera en el orden visual */
+    }
+
+    
+    .products {
+        display: flex;
+        flex-direction: column;
+
+    }
+    .product-grid {
+    grid-template-columns: repeat(3, 1fr);
+    }
+
+    .product {
+
+    margin: 10px;
+    }
+
+
+    .add-product {
+        grid-column: 2 / 3;
+        min-width: 450px;
+    }
+
+    .add-product h2 {
+        max-width: 350px; /* Establece el ancho máximo del h2 a 325px */
+        padding: 0px 50px ;
+    }
+
+
+}
+
+
+
+
+/* Less than Desktop layout */
+
+@media (max-width: 900px) {
+    main {
+    grid-column: 1 / 2;
+    display: flex;
+    flex-direction: column;
+    }
+    section:nth-child(1) {
+        order: 2; /* La primera sección ahora será la segunda en el orden visual */
+    }
+    section:nth-child(2) {
+        order: 1; /* La segunda sección ahora será la primera en el orden visual */
+    }
+
+    .products {
+        display: flex;
+        flex-direction: column;
+
+    }
+    .product-grid {
+    grid-template-columns: repeat(3, 1fr);
+    }
+
+    .product {
+
+    margin: 10px;
+    }
+
+    .add-product {
+        grid-column: 2 / 3;
+    }
+
+}
+
+
+
+@media (max-width: 840px) {
+    main {
+    grid-column: 1 / 2;
+    display: flex;
+    flex-direction: column;
+    }
+    section:nth-child(1) {
+        order: 2; /* La primera sección ahora será la segunda en el orden visual */
+    }
+    section:nth-child(2) {
+        order: 1; /* La segunda sección ahora será la primera en el orden visual */
+    }
+
+    .products {
+        display: flex;
+        flex-direction: column;
+
+    }
+    .product-grid {
+    grid-template-columns: repeat(2, 1fr);
+    }
+
+    .product {
+
+    margin: 10px;
+    }
+
+    .add-product {
+        grid-column: 2 / 3;
+    }
+
+}
+
+
+/* Mobile layout */
+@media (max-width: 599px) {
+    main {
+        grid-column: 1 / 2;
+        display: flex;
+        flex-direction: column;
+        max-width: auto;
+        }
+        section:nth-child(1) {
+            order: 2; /* La primera sección ahora será la segunda en el orden visual */
+        }
+        section:nth-child(2) {
+            order: 1; /* La segunda sección ahora será la primera en el orden visual */
+        }
+    
+        .products {
+            display: flex;
+            flex-direction: column;
+    
+        }
+        .product-grid {
+        grid-template-columns: repeat(1, 1fr);
+        }
+    
+        .product {
+    
+        margin: 10px;
+        }
+    
+        .add-product {
+            grid-column: 2 / 3;
+            min-width: 0px;
+        }
+    
+        .add-product h2 {
+            max-width: 350px; /* Establece el ancho máximo del h2 a 325px */
+            padding: 0px 50px ;
+        }
+
+
+    
+}
